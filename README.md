@@ -1,4 +1,4 @@
-# ZebraStream — IoT Monitoring for Industry 4.0
+<img width="855" height="242" alt="Screenshot 2026-02-13 at 12 28 06 AM" src="https://github.com/user-attachments/assets/8d1448fb-eca7-4fa9-92c8-d57f04e2a2e7" /><img width="1703" height="982" alt="Screenshot 2026-02-13 at 12 26 52 AM" src="https://github.com/user-attachments/assets/9c2905db-1ed2-4b43-947d-078168b0247b" /><img width="1701" height="983" alt="Screenshot 2026-02-13 at 12 26 12 AM" src="https://github.com/user-attachments/assets/d0a7a040-0421-4b30-a0f9-93ddca01b44d" /># ZebraStream — IoT Monitoring for Industry 4.0
 
 A full-stack IoT monitoring ecosystem demonstrating real-time data pipelining, Statistical Process Control (SPC), and AI-driven maintenance insights. Built as a portfolio project targeting Industry 4.0 / Smart Manufacturing roles.
 
@@ -49,17 +49,35 @@ cp .env.example .env
 # 3. Start all services
 docker compose up -d
 
-# 4. Load sample data (Airflow)
-# Open http://localhost:8080 → login admin/admin → trigger iot_ingestion DAG
+# 4. Load sample data
+# Option A (local): Open http://localhost:8080 → login admin/admin → trigger iot_ingestion DAG
+# Option B (deployed): API_URL=https://zebrastream.onrender.com python -m data_simulator.run
 ```
 
 ### URLs
+
+**Live demo (deployed on Render):**
+
+| Service | URL |
+|---------|-----|
+| **Dashboard** | https://zebrastream.onrender.com/ |
+| **API Docs** | https://zebrastream.onrender.com/docs |
+
+**Local development:**
 
 | Service | URL |
 |---------|-----|
 | **Dashboard** | http://localhost:8000/ |
 | **API Docs** | http://localhost:8000/docs |
 | **Airflow** | http://localhost:8080 (admin / admin) |
+
+---
+
+## Screenshots
+
+| Dashboard | Analytics |
+|-----------|-----------|
+| ![Uploading Screenshot 2026-02-13 at 12.26.52 AM.png…] |![Uploading Screenshot 2026-02-13 at 12.28.06 AM.png…]|
 
 ---
 
@@ -101,6 +119,15 @@ zebra-smart-factory/
 ```bash
 docker compose exec app pytest tests/ -v
 ```
+
+---
+
+## Data Generation
+
+Mock data does **not** auto-generate. To add data:
+
+- **Local:** Trigger the `iot_ingestion` DAG in Airflow (runs once per trigger).
+- **Deployed:** Run `API_URL=https://zebrastream.onrender.com python -m data_simulator.run` from `zebra-smart-factory` (posts 50 readings once).
 
 ---
 
