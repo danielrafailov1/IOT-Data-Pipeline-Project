@@ -104,13 +104,6 @@ docker compose exec app pytest tests/ -v
 
 ---
 
-## Documentation
-
-- [ARCHITECTURE.md](ARCHITECTURE.md) — Data flow, Airflow role, simulation vs. production
-- [SETUP_INSTRUCTIONS.md](../SETUP_INSTRUCTIONS.md) — Detailed setup and troubleshooting
-
----
-
 ## License
 
 MIT
