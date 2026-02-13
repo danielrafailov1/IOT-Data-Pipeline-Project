@@ -77,7 +77,7 @@ docker compose up -d
 
 | Dashboard | Analytics |
 |-----------|-----------|
-| ![Uploading Screenshot 2026-02-13 at 12.26.52 AM.png…] |![Uploading Screenshot 2026-02-13 at 12.28.06 AM.png…]|
+| ![Uploading Screenshot 2026-02-13 at 12.26.52 AM.png…] ||
 
 ---
 
